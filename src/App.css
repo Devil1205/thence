@@ -1,0 +1,32 @@
+.thenceBtn{
+    width: Hug (189.56px)px;
+    height: Hug (77.22px)px;
+    padding: 26.11px 41.78px 26.11px 41.78px;
+    gap: 5.22px;
+    border-radius: 107.06px;
+    opacity: 0px;
+    transition: 0.5s all linear;
+}
+
+.thenceBtnPrimary {
+    border: 1.31px solid #EAEAEA;  
+}
+
+.thenceBtnSecondary {
+    background: #1C1C1C;
+    color: white;
+}
+
+.thenceBtnPrimary:hover{
+    background: #EAEAEA;
+}
+
+.thenceBtnSecondary:hover{
+    background: #4E4E4E;
+}
+
+@media screen and (max-width: 800px) {
+    .thenceBtn{
+        padding: 15px 10px;
+    }
+}
