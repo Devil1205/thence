@@ -3,7 +3,7 @@ import HeaderSecondary from "../layout/Header/HeaderSecondary";
 import "./Register.css";
 import Error from "./Error";
 import Title from "../layout/Title";
-import { useAppDispatch, useAppSelector } from "../../hooks";
+import { useAppDispatch } from "../../hooks";
 import { registerUser } from "../../features/user/userSlice";
 import { useNavigate } from "react-router-dom";
 
