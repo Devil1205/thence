@@ -9,11 +9,13 @@ import AccordionSummary from '@mui/material/AccordionSummary';
 import AccordionDetails from '@mui/material/AccordionDetails';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Footer from "../layout/Footer/Footer";
+import Title from "../layout/Title";
 
 function Home() {
   return (
     <>
       <HeaderPrimary />
+      <Title title={"Thence - Home"} />
       <div className="home space-y-20 p-4">
         <div></div>
         <div className="home-1 flex flex-col items-center max-w-[588px] mx-auto">

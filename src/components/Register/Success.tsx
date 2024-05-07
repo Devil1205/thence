@@ -3,14 +3,26 @@ import "./Success.css";
 import success from "../../images/success.svg";
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Title from "../layout/Title.jsx";
+import { useAppDispatch, useAppSelector } from '../../hooks.js';
+import { resetUser } from '../../features/user/userSlice.js';
 
 function Success() {
 
     const [count, setCount] = useState(5);
+
     const navigate = useNavigate();
 
+    const { user } = useAppSelector(state => state.user);
+
+    const dispatch = useAppDispatch();
+
     useEffect(() => {
+        if (!user) {
+            navigate("/register");
+        }
         if (count === 0) {
+            dispatch(resetUser());
             navigate("/");
         }
         const interval = setInterval(() => {
@@ -23,6 +35,7 @@ function Success() {
     return (
         <>
             <HeaderSecondary />
+            <Title title={"Thence - Registration Success"} />
             <div className="registerSuccess p-4">
                 <div className="flex flex-col items-center mx-auto">
                     <img src={success} alt="" />

@@ -1,13 +1,21 @@
-import React, { FormEventHandler, useState } from "react";
+import React, { useState } from "react";
 import HeaderSecondary from "../layout/Header/HeaderSecondary";
 import "./Register.css";
 import Error from "./Error";
+import Title from "../layout/Title";
+import { useAppDispatch, useAppSelector } from "../../hooks";
+import { registerUser } from "../../features/user/userSlice";
+import { useNavigate } from "react-router-dom";
 
 function Register() {
   const [email, setEmail] = useState("");
   const [emailError, setEmailError] = useState("");
   const [name, setName] = useState("");
   const [nameError, setNameError] = useState("");
+
+  const dispatch = useAppDispatch();
+
+  const navigate = useNavigate();
 
   const handleRegisterSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -22,18 +30,21 @@ function Register() {
       setEmailError("Please enter a email");
       return false;
     }
-    if (!email.match(/^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$/)) {
+    if (!email.match(/^\d{10}|[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
       setEmailError("Please enter a valid email address")
       return false;
     }
     else {
       setEmailError("");
+      dispatch(registerUser({ user: { name, email } }));
+      navigate("success");
     }
   }
 
   return (
     <>
       <HeaderSecondary />
+      <Title title={"Thence - Registration"} />
       <div className="registration">
         <div className="flex flex-col items-center max-w-[588px] mx-auto">
           <h2 className="text-[#2DA950]">Registration Form</h2>
