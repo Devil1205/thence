@@ -1,0 +1,31 @@
+.registerSuccess>div>div>h2 {
+    font-family: Covered By Your Grace;
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 39.6px;
+    letter-spacing: -0.02em;
+    text-align: left;
+}
+
+.registerSuccess>div>div>h3 {
+    font-family: Manrope;
+    font-weight: 600;
+    line-height: 67.2px;
+    letter-spacing: -0.02em;
+    text-align: center;
+}
+
+.registerSuccess>div>div>p {
+    font-family: Manrope;
+    font-weight: 500;
+    line-height: 35.1px;
+    text-align: center;
+}
+
+.registerSuccess>div {
+    font-family: Manrope;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: center;
+}

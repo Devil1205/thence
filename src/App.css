@@ -25,6 +25,11 @@
     background: #4E4E4E;
 }
 
+.thenceBtnSecondary:disabled {
+    cursor: not-allowed;
+    background: #757575;
+}
+
 @media screen and (max-width: 800px) {
     .thenceBtn{
         padding: 15px 10px;
